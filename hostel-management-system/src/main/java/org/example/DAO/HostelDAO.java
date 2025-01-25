@@ -42,7 +42,7 @@ public class HostelDAO {
             ResultSet res = preparedStatement.executeQuery();
 
             if (res.next()){
-                String hostelId = res.getString("hostelId");
+                hostelId = res.getString("hostelId");
                 String hostelName = res.getString("hostelName");
                 int numberofRooms = res.getInt("numberofRooms");
 
@@ -72,7 +72,7 @@ public class HostelDAO {
 
             int res = preparedStatement.executeUpdate(); // can use  preparedStatement.executeUpdate();
             if (res>0) {
-                return "Successfully updated the record of the hostel Id: " + id;
+                return "Successfully updated the record of the hostel Id: " + hostelId;
             } else {
                 return "Updating hostel is unsuccessful!";
             }
