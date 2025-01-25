@@ -1,4 +1,7 @@
 package org.example;
+import org.example.service.AppService;
+
+import java.util.Scanner;
 
 
 public class Main {
@@ -13,7 +16,7 @@ public class Main {
         System.out.println("[3]Manage Student Allocations");
         System.out.println("[0]Exit");
 
-
+        int output = AppService.selectOption();
 
     }
 }
