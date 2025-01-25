@@ -17,14 +17,14 @@ public class StudentDAO {
         this.student = student;
     }
 
-    public String addStudent(String id, String name, int age, String department){
+    public static String addStudent(String id, String name, int age, String department){
         String sql = "INSERT INTO students (student_id, name, age, department)VALUES (?,?,?,?)";
         try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(sql)) {
 
-            preparedStatement.setString(1,student.getStudentId());
-            preparedStatement.setString(2,student.getStudentName());
-            preparedStatement.setInt(3,student.getStudentAge());
-            preparedStatement.setString(4,student.getDepartment());
+            preparedStatement.setString(1,id);
+            preparedStatement.setString(2,name);
+            preparedStatement.setInt(3,age);
+            preparedStatement.setString(4,department);
 
             int res = preparedStatement.executeUpdate(); // can use  preparedStatement.executeUpdate();
 
@@ -45,7 +45,7 @@ public class StudentDAO {
         String sql = "SELECT * FROM students WHERE student_id = ?;";
         StringBuilder result = new StringBuilder();
         try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(sql)) {
-            preparedStatement.setString(1,student.getStudentId());
+            preparedStatement.setString(1,id);
             ResultSet res = preparedStatement.executeQuery();
 
             if (res.next()){
@@ -91,11 +91,11 @@ public class StudentDAO {
 
     //========================================================
 
-    public String deleteEmployee(String id){
-        String sql = "DELETE FROM employees WHERE employee_id = ?";
+    public String deleteStudent(String id){
+        String sql = "DELETE FROM employees WHERE student_id = ?";
         try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(sql)) {
 
-            preparedStatement.setString(1,student.getStudentId());
+            preparedStatement.setString(1, id);
 
             int row = preparedStatement.executeUpdate();
             if (row > 0) {
