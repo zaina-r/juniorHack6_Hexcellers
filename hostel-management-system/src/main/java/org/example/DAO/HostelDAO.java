@@ -1,7 +1,7 @@
 package org.example.DAO;
 
 import org.example.db.dbConnector;
-import org.example.model.student;
+import org.example.model.hostel;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ public class HostelDAO {
             int res = preparedStatement.executeUpdate(); // can use  preparedStatement.executeUpdate();
 
             if (res>0) {
-                return "Successfully added the record of the Hostel: " + id;
+                return "Successfully added the record of the Hostel: " + hostelId;
             } else {
                 return "Registering hostel is unsuccessful!";
             }
