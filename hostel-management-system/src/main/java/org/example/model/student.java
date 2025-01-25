@@ -1,41 +1,51 @@
 package org.example.model;
 
 public class student {
-    private static String studentId;
-    private static  String studentName;
-    private static int studentAge;
-    private static String department;
+    private String studentId;
+    private String studentName;
+    private int studentAge;
+    private String department;
 
-    public static String getStudentId() {
+    public student(String studentId, String studentName, int studentAge, String department) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.studentAge = studentAge;
+        this.department = department;
+    }
+
+    public String getStudentId() {
         return studentId;
     }
 
-    public static void setStudentId(String studentId) {
-        student.studentId = studentId;
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
-    public static String getStudentName() {
+    public String getStudentName() {
         return studentName;
     }
 
-    public static void setStudentName(String studentName) {
-        student.studentName = studentName;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public static int getStudentAge() {
+    public int getStudentAge() {
         return studentAge;
     }
 
-    public static void setStudentAge(int studentAge) {
-        student.studentAge = studentAge;
+    public void setStudentAge(int studentAge) {
+        this.studentAge = studentAge;
     }
 
-    public static String getDepartment() {
+    public String getDepartment() {
         return department;
     }
 
-    public static void setDepartment(String department) {
-        student.department = department;
+    public void setDepartment(String department) {
+        this.department = department;
     }
-
+//    @Override
+//    public String toString() {
+//        return "student{}";
+//    }
 }
