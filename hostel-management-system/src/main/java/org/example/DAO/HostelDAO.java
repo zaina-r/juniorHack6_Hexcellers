@@ -4,6 +4,7 @@ import org.example.db.dbConnector;
 import org.example.model.hostel;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class HostelDAO {
@@ -15,7 +16,7 @@ public class HostelDAO {
         String query = "INSERT INTO Hostel (hostelId, hostelName,numberofRooms)VALUES (?,?,?)";
         try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(query)) {
 
-            preparedStatement.setLong(1,hostel.getHostelId());
+            preparedStatement.setLong(1, Long.parseLong(hostelId));
             preparedStatement.setString(2,hostel.getHostelName());
             preparedStatement.setInt(3,hostel.getNumberofRooms());
 
@@ -33,15 +34,15 @@ public class HostelDAO {
         }
     }
 
-    public String viewHostel( hostelId, dbConnector conn){
+    public String viewHostel( String hostelId, dbConnector conn){
         String sql = "SELECT * FROM hostel WHERE hostelId = ?;";
         StringBuilder result = new StringBuilder();
-        try(PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+        try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(sql)) {
             preparedStatement.setString(1,hostelId);
             ResultSet res = preparedStatement.executeQuery();
 
             if (res.next()){
-                string hostelId = res.getString("hostelId");
+                String hostelId = res.getString("hostelId");
                 String hostelName = res.getString("hostelName");
                 int numberofRooms = res.getInt("numberofRooms");
 
@@ -58,9 +59,9 @@ public class HostelDAO {
 
     //=================================
 
-    public String updateHostel(String hostelId, String attribute, Object value,Connection conn){
+    public String updateHostel(String hostelId, String attribute, Object value){
         String sql = "UPDATE hostel SET " + attribute + " = ? WHERE hostelId = ?";
-        try(PreparedStatement preparedStatement = conn.prepareStatement(sql);) {
+        try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(sql);) {
 
             if(!attribute.equals("hostelName")) {
                 preparedStatement.setString(1, value.toString());
@@ -83,15 +84,15 @@ public class HostelDAO {
 
     //========================================================
 
-    public String deleteEmployee(String hostelId, Connection conn){
+    public String deleteEmployee(String hostelId){
         String sql = "DELETE FROM hostels WHERE hostelId = ?";
-        try(PreparedStatement preparedStatement = conn.prepareStatement(sql);) {
+        try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(sql);) {
 
-            preparedStatement.setString(1,id);
+            preparedStatement.setString(1,hostelId);
 
             int row = preparedStatement.executeUpdate();
             if (row > 0) {
-                return "Successfully deleted the record of the employee Id: " + id;
+                return "Successfully deleted the record of the employee Id: " + hostelId;
             }
             else if (row == 0) {
                 return "Given hostel is not found!";

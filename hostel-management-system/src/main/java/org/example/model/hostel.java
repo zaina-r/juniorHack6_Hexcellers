@@ -7,11 +7,11 @@ public class hostel {
     private  int numberofRooms;
     private  String hostelName;
 
-    public Long getHostelId() {
+    public String getHostelId() {
         return hostelId;
     }
 
-    public void setHostelId(string hostelId) {
+    public void setHostelId(String hostelId) {
         this.hostelId = hostelId;
     }
 
