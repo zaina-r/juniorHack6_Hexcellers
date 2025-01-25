@@ -3,7 +3,7 @@ package org.example.model;
 public class hostel {
 
 
-    private Long hostelId;
+    private String hostelId;
     private  int numberofRooms;
     private  String hostelName;
 
@@ -11,7 +11,7 @@ public class hostel {
         return hostelId;
     }
 
-    public void setHostelId(Long hostelId) {
+    public void setHostelId(string hostelId) {
         this.hostelId = hostelId;
     }
 
@@ -19,7 +19,7 @@ public class hostel {
         return hostelName;
     }
 
-    public hostel(Long hostelId, int numberofRooms, String hostelName) {
+    public hostel(String hostelId, int numberofRooms, String hostelName) {
         this.hostelId = hostelId;
         this.numberofRooms = numberofRooms;
         this.hostelName = hostelName;
