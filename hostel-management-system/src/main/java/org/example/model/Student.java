@@ -1,12 +1,12 @@
 package org.example.model;
 
-public class student {
+public class Student {
     private String studentId;
     private String studentName;
     private int studentAge;
     private String department;
 
-    public student(String studentId, String studentName, int studentAge, String department) {
+    public Student(String studentId, String studentName, int studentAge, String department) {
         this.studentId = studentId;
         this.studentName = studentName;
         this.studentAge = studentAge;

@@ -1,6 +1,6 @@
 package org.example.model;
 
-public class hostel {
+public class Hostel {
 
 
     private Long hostelId;
@@ -19,7 +19,7 @@ public class hostel {
         return hostelName;
     }
 
-    public hostel(Long hostelId, int numberofRooms, String hostelName) {
+    public Hostel(Long hostelId, int numberofRooms, String hostelName) {
         this.hostelId = hostelId;
         this.numberofRooms = numberofRooms;
         this.hostelName = hostelName;

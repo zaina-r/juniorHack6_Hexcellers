@@ -1,14 +1,14 @@
 package org.example.model;
 
 
-public class allocations {
+public class Allocations {
     private String allocation_id;
     private String allocation_date;
     private String room_id;
 
     private String student_id;
 
-    public allocations(String allocation_id, String allocation_date, String room_id, String student_id) {
+    public Allocations(String allocation_id, String allocation_date, String room_id, String student_id) {
         this.allocation_id = allocation_id;
         this.allocation_date = allocation_date;
         this.room_id = room_id;

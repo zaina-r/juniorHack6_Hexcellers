@@ -1,4 +1,4 @@
 package org.example.service;
 
-public class hostelService {
+public class HostelService {
 }

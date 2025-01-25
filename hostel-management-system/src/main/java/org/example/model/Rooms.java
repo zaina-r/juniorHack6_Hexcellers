@@ -1,13 +1,13 @@
 package org.example.model;
 
-public class rooms {
+public class Rooms {
     private String room_id;
     private String hostel_id;
     private int room_number;
     private int capacity;
     private int available_capacity;
 
-    public rooms(String room_id, String hostel_id, int room_number, int capacity, int available_capacity) {
+    public Rooms(String room_id, String hostel_id, int room_number, int capacity, int available_capacity) {
         this.room_id = room_id;
         this.hostel_id = hostel_id;
         this.room_number = room_number;
