@@ -11,7 +11,7 @@ public class AllocationDAO {
     private dbConnector dbConnector;
     private student student;
 
-    public String addAllocation(String id, String name, String student student_id, String room_id,String allocation_date){
+    public String addAllocation(String id, String name, String student, student_id, String room_id,String allocation_date){
         String query = "INSERT INTO allocation (allocation_id, student_id, room_id, allocation_date)VALUES (?,?,?,?)";
         try(PreparedStatement preparedStatement = org.example.db.dbConnector.getConnection().prepareStatement(query)) {
 
